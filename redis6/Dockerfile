@@ -40,7 +40,7 @@ RUN set -eux \
     && echo "loadmodule /usr/local/lib/redisbloom.so" > /etc/redis/redis.conf \
     && echo "requirepass ${REDIS_PASSWORD}" >> /etc/redis/redis.conf \
     && echo "protected-mode yes" >> /etc/redis/redis.conf \
-    && echo "bind 127.0.0.1" >> /etc/redis/redis.conf \
+    && echo "bind 0.0.0.0" >> /etc/redis/redis.conf \
     && dnf clean all \
     && rm -rf /tmp/* /var/tmp/* \
     && rm -rf /var/cache/dnf/*
